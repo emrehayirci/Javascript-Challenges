@@ -36,3 +36,39 @@ Keep in mind that you have to implement a method to get aOrderLines to loop over
 
 How you could solve this problem?
 
+--Answer
+
+
+
+	    f(function ()
+    {
+         var aOrderLines = [];
+         var nOrderTotal = 0;
+         getOrderLines = function()
+         {
+           return aOrderLines;
+         };
+         addOrderLine = function(oOrderLine)
+         {
+           nOrderTotal += oOrderLine.nTotal;
+           aOrderLines.push(oOrderLine);
+         };
+         removeOrderLine = function(oOrderLineItem)
+         {
+           var nOrderTotal;
+           oOrderLine = aOrderLines.map(function(oOrder)
+           {
+                    return oOrder === oOrderLineItem;
+           })[0];
+  
+           if(typeof oOrderLine === 'undefined' || oOrderLine === null)
+           {
+                    return;
+           }
+           nOrderTotal -= oOrderLine.nTotal;
+           aOrderLines.splice(nOrderTotal, 1);
+           console.log(aOrderLines);
+        };
+    })();
+    
+Note that self invoking anonymous function expression used here. Therefore array and number cannot be reach because it remained in another scope
