@@ -40,7 +40,7 @@ How you could solve this problem?
 
 
 
-	    f(function ()
+	    (function ()
     {
          var aOrderLines = [];
          var nOrderTotal = 0;
