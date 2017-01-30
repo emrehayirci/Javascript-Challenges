@@ -48,3 +48,9 @@ Snippet 3:
 
 
 What's the reason of this behaviour?
+
+
+--Answer
+   
+I tried doing this at different interpreters. This problem is exists on older verisons of js i guess . Defining  functions like snippet2 is not secure. Defining functions like snipet1 is much more secure.
+At snipet2 hoisting will take place and replace our function no matter looking if else statement. 
