@@ -34,3 +34,4 @@ Let me give you another exapmle; if we have array of ["1",2,3]:
 	"1,2,3"
 	
 ToString method will loose its type but jsonStrignify will keep its types so that we can reload copy of this array easily from it
+Also keep in mind that json format does not support undefined values, there are nulls used instead
