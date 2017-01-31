@@ -31,3 +31,14 @@ Why does calling ...
 		}
 		return !!nResult;
 	};
+
+##Answer
+
+	Boolean.prototype.xor = function (sValue) {return !!this !== !!sValue};
+This statement is not negating value of this. It simply negating existance of this. To resolve this use this instead
+
+	Boolean.prototype.xor = function (sValue) {return !!this.valueOf() !== !!sValue;};
+	
+###Bonus
+Bitwise or and assigning its value has nothing to do with the existance of the values but values of the variables. So that 
+for the each arguments their bitwise representations are 00000000000...0000 etc. You can test their values by [] << 0 statement. This statement simply bitwise lefts the statements. Therefore bitwise oring all of statements will result in 00000...0000 
